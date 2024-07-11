@@ -25,21 +25,31 @@
 <body>
 <div id="player"></div>
 <img class="imgA1" src="https://raw.githubusercontent.com/tvtelugu/tvtelugu.github.io/main/web/img/tvtelugu%20player.png">
+
 <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
 <script>
     const channelId = new URLSearchParams(window.location.search).get('id');
+    if (!channelId) {
+        alert('Error: No channel ID specified');
+        throw new Error('No channel ID specified');
+    }
+
     const url = `https://captaintvwc.x10.mx/tataplay/get.php?id=${channelId}`;
 
     fetch(url)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
-            if (!data) {
-                alert('Error: Invalid channel ID');
-                return;
+            if (!data || !data.channel__url || !data.channel_name || !data.keyid || !data.key) {
+                throw new Error('Invalid data structure');
             }
 
             const videoUrl = data.channel__url;
-            const logoUrl = data.channel_name; // Assuming no logo URL in the JSON, using channel name instead
+            const logoUrl = data.channel_name; // Using channel name as the logo
             const videoTitle = data.channel_name;
             const keyid = data.keyid;
             const key = data.key;
@@ -52,28 +62,19 @@
                 displaydescription: true,
                 abouttext: "🕊𝐓𝐕𝐓𝐞𝐥𝐮𝐠𝐮™",
                 aboutlink: "https://t.me/tvtelugu",
-
-                skin: {
-                    name: "netflix"
-                },
-
-                logo: {
-                    file: logoUrl,
-                    link: "https://t.me/tvtelugu"
-                },
-
+                skin: { name: "netflix" },
+                logo: { file: logoUrl, link: "https://t.me/tvtelugu" },
                 captions: {
                     color: "#FFF",
                     fontSize: 14,
                     backgroundOpacity: 0,
                     edgeStyle: "raised"
                 },
-
                 playlist: [
                     {
                         title: videoTitle,
                         description: "Now On TVTelugu 🕊",
-                        image: logoUrl, // Assuming no specific image, using channel name instead
+                        image: logoUrl,
                         sources: [
                             {
                                 file: videoUrl,
@@ -138,7 +139,7 @@
             });
         })
         .catch(error => {
-            console.error('Error fetching data:', error);
+            console.error('Error:', error);
             alert('Error fetching data');
         });
 </script>
