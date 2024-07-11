@@ -39,11 +39,12 @@
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('Network response was not ok: ' + response.statusText);
             }
             return response.json();
         })
         .then(data => {
+            console.log(data);  // Log the fetched data
             if (!data || !data.channel__url || !data.channel_name || !data.keyid || !data.key) {
                 throw new Error('Invalid data structure');
             }
@@ -140,7 +141,7 @@
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('Error fetching data');
+            alert('Error fetching data: ' + error.message);
         });
 </script>
 </body>
