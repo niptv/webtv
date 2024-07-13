@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Box Layout</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .card {
+            background-color: #f8f8f8;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+        .card img {
+            max-width: 100px;
+            margin: 15px 0;
+        }
+        .card h2 {
+            font-size: 1rem;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 0.875rem;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="card">
+            <a target="_blank" href="https://tgaadi-web.tech/player.php?https://tgaadi-web.tech/stalker.m3u8?tv=12805">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Bharti_Airtel_Logo.svg/893px-Bharti_Airtel_Logo.svg.png" alt="Bharti Airtel Logo">
+                <h2>TELUGU EROSNOW CLASSIC CINEMA 1</h2>
+                <p>TELUGU EROSNOW CLASSIC CINEMA 1</p>
+            </a>
+        </div>
+        <div class="card">
+            <a target="_blank" href="https://tgaadi-web.tech/player.php?https://tgaadi-web.tech/stalker.m3u8?tv=12808">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Bharti_Airtel_Logo.svg/893px-Bharti_Airtel_Logo.svg.png" alt="Bharti Airtel Logo">
+                <h2>TELUGU CLASSIC CINEMA 1 SD</h2>
+                <p>TELUGU CLASSIC CINEMA 1 SD</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
