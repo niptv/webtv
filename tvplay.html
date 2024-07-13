@@ -12,8 +12,16 @@
     <div id="playerContainer"></div>
 
     <script>
+        // Function to get URL parameter
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
         // Fetch JSON data
-        fetch('iptv.json')
+        fetch('channels.json')
             .then(response => response.json())
             .then(channels => {
                 // Initialize JW Player
@@ -26,9 +34,6 @@
                         aspectratio: "16:9"
                     });
                 }
-
-                // Load the first channel by default
-                loadPlayer(channels[0]);
 
                 // Create a dropdown to select different channels
                 const select = document.createElement('select');
@@ -44,6 +49,14 @@
                 });
 
                 document.body.insertBefore(select, document.getElementById('playerContainer'));
+
+                // Load the channel based on URL parameter or default to the first one
+                const channelId = getUrlParameter('id');
+                const channelToLoad = channels.find(channel => channel.id === channelId) || channels[0];
+                loadPlayer(channelToLoad);
+
+                // Set the dropdown to the correct option
+                select.value = channelToLoad.name;
             })
             .catch(error => console.error('Error fetching JSON:', error));
     </script>
