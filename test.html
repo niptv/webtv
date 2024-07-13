@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🕊𝐓𝐕𝐓𝐄𝐥𝐮𝐠𝐮™</title>
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/tvtelugu/play/main/images/TVtelugu.ico">
-       <style>
-           body {
+    <style>
+        body {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -14,7 +14,6 @@
             margin: 0;
             font-family: Arial, sans-serif;
             color: #fff;
-           
         }
         body::before {
             content: '';
@@ -85,7 +84,6 @@
         }
         .card img {
             max-width: 100px;
-
         }
         .card h2 {
             font-size: 1rem;
@@ -171,13 +169,18 @@
             margin-top: 20px;
             z-index: 1; /* Ensure footer is above the background blur */
         }
-          
     </style>
 </head>
 <body>
     <div class="background-blur"></div>
 
     <header>
+        <img src="https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png" alt="Logo" class="logo"> <!-- Add your logo URL here -->
+        <div class="title">
+            <h1> 🕊 𝐓𝐕𝐓𝐄𝐋𝐔𝐆𝐔 </h1>
+        </div>
+    </header>
+
         <img src="https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png" alt="Logo" class="logo"> <!-- Add your logo URL here -->
         <div class="title">
             <h1> 🕊 𝐓𝐕𝐓𝐄𝐋𝐔𝐆𝐔 </h1>
@@ -757,7 +760,7 @@
 </div>
 </div>
 
-<div id="overlay" class="overlay">
+ <div id="overlay" class="overlay">
         <div class="overlay-content">
             <img src="https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png" alt="Logo" class="player-logo"> <!-- Add your logo URL here -->
             <button class="close-btn" onclick="closeOverlay()">×</button>
@@ -771,22 +774,25 @@
     </footer>
 
     <script>
+        let scrollPosition = 0; // Variable to store the scroll position
+
         function openOverlay(event, url) {
             event.preventDefault(); // Prevent the default anchor click behavior
+
+            scrollPosition = window.scrollY; // Store the current scroll position
+
             document.getElementById('overlay-frame').src = url;
             document.getElementById('overlay').style.display = 'flex';
             document.getElementById('loader').style.display = 'block';  // Show the loader
             document.getElementById('overlay-frame').onload = function() {
                 document.getElementById('loader').style.display = 'none';  // Hide the loader when the iframe loads
             };
-
-            // Scroll to the bottom of the page
-            window.scrollTo(0, document.body.scrollHeight);
         }
 
         function closeOverlay() {
             document.getElementById('overlay').style.display = 'none';
             document.getElementById('overlay-frame').src = '';
+            window.scrollTo(0, scrollPosition); // Restore the scroll position
         }
     </script>
 </body>
