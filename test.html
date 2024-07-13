@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Box Layout</title>
+    <title>Grid Box Layout with Popup Player</title>
     <style>
         body {
             display: flex;
@@ -52,19 +52,26 @@
 <body>
     <div class="grid-container">
         <div class="card">
-            <a target="_blank" href="https://tgaadi-web.tech/player.php?https://tgaadi-web.tech/stalker.m3u8?tv=12805">
+            <a href="#" onclick="openPopup('https://tgaadi-web.tech/player.php?https://tgaadi-web.tech/stalker.m3u8?tv=12805')">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Bharti_Airtel_Logo.svg/893px-Bharti_Airtel_Logo.svg.png" alt="Bharti Airtel Logo">
                 <h2>TELUGU EROSNOW CLASSIC CINEMA 1</h2>
                 <p>TELUGU EROSNOW CLASSIC CINEMA 1</p>
             </a>
         </div>
         <div class="card">
-            <a target="_blank" href="https://tgaadi-web.tech/player.php?https://tgaadi-web.tech/stalker.m3u8?tv=12808">
+            <a href="#" onclick="openPopup('https://tgaadi-web.tech/player.php?https://tgaadi-web.tech/stalker.m3u8?tv=12808')">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Bharti_Airtel_Logo.svg/893px-Bharti_Airtel_Logo.svg.png" alt="Bharti Airtel Logo">
                 <h2>TELUGU CLASSIC CINEMA 1 SD</h2>
                 <p>TELUGU CLASSIC CINEMA 1 SD</p>
             </a>
         </div>
     </div>
+
+    <script>
+        function openPopup(url) {
+            window.open(url, 'popup', 'width=600,height=400,scrollbars=no,resizable=no');
+            return false;
+        }
+    </script>
 </body>
 </html>
