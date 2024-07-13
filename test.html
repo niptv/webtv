@@ -6,7 +6,7 @@
     <title>🕊𝐓𝐕𝐓𝐞𝐥𝐮𝐠𝐮™</title>
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/tvtelugu/play/main/images/TVtelugu.ico">
        <style>
-            body {
+           body {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -118,6 +118,14 @@
             background-color: #141414;
             border-radius: 10px;
             padding: 20px;
+        }
+        .overlay-content .player-logo {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px; /* Adjust the logo size */
+            margin-bottom: 10px;
         }
         .overlay-content iframe {
             width: 100%;
@@ -976,8 +984,9 @@
 </div>
 </div>
 
-   <div id="overlay" class="overlay">
+  <div id="overlay" class="overlay">
         <div class="overlay-content">
+            <img src="https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png" alt="Logo" class="player-logo"> <!-- Add your logo URL here -->
             <button class="close-btn" onclick="closeOverlay()">×</button>
             <div class="loader" id="loader"></div>
             <iframe id="overlay-frame" src="" frameborder="0" allowfullscreen></iframe>
