@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🕊𝐓𝐕𝐓𝐞𝐥𝐮𝐠𝐮™</title>
+    <title>🕊𝐓𝐕𝐓𝐄𝐥𝐮𝐠𝐮™</title>
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/tvtelugu/play/main/images/TVtelugu.ico">
        <style>
            body {
@@ -171,15 +171,7 @@
             margin-top: 20px;
             z-index: 1; /* Ensure footer is above the background blur */
         }
-           #scrollPosition {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-}
+          
     </style>
 </head>
 <body>
@@ -765,7 +757,7 @@
 </div>
 </div>
 
-  <div id="overlay" class="overlay">
+<div id="overlay" class="overlay">
         <div class="overlay-content">
             <img src="https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png" alt="Logo" class="player-logo"> <!-- Add your logo URL here -->
             <button class="close-btn" onclick="closeOverlay()">×</button>
@@ -786,18 +778,15 @@
             document.getElementById('overlay-frame').onload = function() {
                 document.getElementById('loader').style.display = 'none';  // Hide the loader when the iframe loads
             };
+
+            // Scroll to the bottom of the page
+            window.scrollTo(0, document.body.scrollHeight);
         }
 
         function closeOverlay() {
             document.getElementById('overlay').style.display = 'none';
             document.getElementById('overlay-frame').src = '';
         }
-    </script>
-    <script>
-        document.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    document.getElementById('scrollPosition').textContent = `Last Scroll Position: ${scrollPosition}`;
-});
     </script>
 </body>
 </html>
