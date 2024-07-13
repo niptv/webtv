@@ -11,54 +11,49 @@
 <body>
     <div id="playerContainer"></div>
 
-    <script>
-        // Function to get URL parameter
+    <script type="text/javascript">
+        // Function to get URL parameter by name
         function getUrlParameter(name) {
             name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            const results = regex.exec(location.search);
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
             return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
         }
 
-        // Fetch JSON data
-        fetch('iptv.json')
-            .then(response => response.json())
-            .then(channels => {
-                // Initialize JW Player
-                function loadPlayer(channel) {
+        // Get the 'id' parameter from the URL
+        var id = getUrlParameter('id');
+
+        // Load the JSON file and get the video data by ID
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var data = JSON.parse(xhr.responseText);
+                var videoData = data.find(video => video.id === id);
+
+                // Check if videoData exists before setting up the player
+                if (videoData) {
                     jwplayer("playerContainer").setup({
-                        file: channel.link,
-                        image: channel.logo,
-                        title: channel.name,
-                        width: "100%",
-                        aspectratio: "16:9"
+                        title: videoData.name,
+                        description: "VaathalaTV",
+                        image: videoData.logo,
+                        aspectratio: '16:9',
+                        width: '100%',
+                        mute: false,
+                        autostart: true,
+                        file: videoData.link,
+                        type: "hls",
+                        captions: {color: '#ffb800', fontSize: 30, backgroundOpacity: 0},
+                        sharing: {
+                            sites: ['facebook', 'twitter']
+                        }
                     });
+                } else {
+                    console.error('Video not found for ID:', id);
                 }
-
-                // Create a dropdown to select different channels
-                const select = document.createElement('select');
-                select.onchange = function() {
-                    const selectedChannel = channels[select.selectedIndex];
-                    loadPlayer(selectedChannel);
-                };
-
-                channels.forEach(channel => {
-                    const option = document.createElement('option');
-                    option.text = channel.name;
-                    select.add(option);
-                });
-
-                document.body.insertBefore(select, document.getElementById('playerContainer'));
-
-                // Load the channel based on URL parameter or default to the first one
-                const channelId = getUrlParameter('id');
-                const channelToLoad = channels.find(channel => channel.id === channelId) || channels[0];
-                loadPlayer(channelToLoad);
-
-                // Set the dropdown to the correct option
-                select.value = channelToLoad.name;
-            })
-            .catch(error => console.error('Error fetching JSON:', error));
+            }
+        };
+        xhr.open('GET', 'iptv.json', true);
+        xhr.send();
     </script>
 </body>
 </html>
