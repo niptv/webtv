@@ -1,9 +1,9 @@
 [
   {
- "name": "ELUGU EROSNOW CLASSIC CINEMA 1",
+ "name": "TELUGU EROSNOW CLASSIC CINEMA 1",
     "id": "12805",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Bharti_Airtel_Logo.svg/893px-Bharti_Airtel_Logo.svg.png",
-    "group": "News",
+    "logo": "https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png",
+    "group": "Movies",
     "link": "https://tgaadi-web.tech/stalker.m3u8?tv=12805",
     "language": "English",
     "license_key": "",
@@ -11,25 +11,92 @@
     "kid": ""
   },
   {
-    "name": "Colors HD",
-    "id": "144",
-    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_HD.png",
+    "name": "TELUGU CLASSIC CINEMA 1 SD",
+    "id": "12808",
+    "logo": "https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png",
     "group": "Entertainment",
-    "link": "https://fifaxbd.fun/JIOxRANAPK/stream.m3u8?id=144&e=.m3u8",
+    "link": "https://tgaadi-web.tech/stalker.m3u8?tv=12808",
 	"language": "Hindi",
     "license_key": "",
     "k": "",
     "kid": ""
   },
 {
-    "name": "Janadesh News",
-    "id": "3023",
-    "logo": "http://jiotv.catchup.cdn.jio.com/dare_images/images/Janadesh_News.png",
-    "group": "News",
-    "link": "https://fifaxbd.fun/JIOxRANAPK/stream.m3u8?id=3023&e=.m3u8",
-	"language": "Hindi",
+    "name": "TELUGU COMEDY ROMANCE CINEMA HD",
+    "id": "12811",
+    "logo": "https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png",
+    "group": "Entertainment",
+    "link": "https://tgaadi-web.tech/stalker.m3u8?tv=12811",
+	"language": " ",
+    "license_key": "",
+    "k": "",
+    "kid": ""
+  },
+	{
+    "name": "TELUGU COMEDY CLIP",
+    "id": "12814",
+    "logo": "https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png",
+    "group": "Entertainment",
+    "link": "https://tgaadi-web.tech/stalker.m3u8?tv=12814",
+	"language": " ",
+    "license_key": "",
+    "k": "",
+    "kid": ""
+  },
+	{
+    "name": "TELUGU DUBBED 1 4K",
+    "id": "12817",
+    "logo": "https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png",
+    "group": "Entertainment",
+    "link": "https://tgaadi-web.tech/stalker.m3u8?tv=12817",
+	"language": " ",
+    "license_key": "",
+    "k": "",
+    "kid": ""
+  },
+	{
+    "name": "TELUGU DUBBED 2 4K",
+    "id": "12820",
+    "logo": "https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png",
+    "group": "Entertainment",
+    "link": "https://tgaadi-web.tech/stalker.m3u8?tv=12820",
+	"language": " ",
+    "license_key": "",
+    "k": "",
+    "kid": ""
+  },
+	{
+    "name": "TELUGU CINEMA 1 HD",
+    "id": "12823",
+    "logo": "https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png",
+    "group": "Entertainment",
+    "link": "https://tgaadi-web.tech/stalker.m3u8?tv=12823",
+	"language": " ",
+    "license_key": "",
+    "k": "",
+    "kid": ""
+  },
+	{
+    "name": "TELUGU CINEMA 2 SD",
+    "id": "12826",
+    "logo": " ",
+    "group": "Entertainment",
+    "link": "https://tgaadi-web.tech/stalker.m3u8?tv=12826",
+	"language": " ",
+    "license_key": "",
+    "k": "",
+    "kid": ""
+  },
+	{
+    "name": "TELUGU CINEMA 3 SD",
+    "id": "12829",
+    "logo": "https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png",
+    "group": "Entertainment",
+    "link": "https://tgaadi-web.tech/stalker.m3u8?tv=12829",
+	"language": " ",
     "license_key": "",
     "k": "",
     "kid": ""
   }
+
 ]
