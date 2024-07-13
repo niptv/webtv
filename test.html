@@ -6,18 +6,29 @@
     <title>🕊𝐓𝐕𝐓𝐞𝐥𝐮𝐠𝐮™ || 𝐓𝐀𝐓𝐀𝐏𝐋𝐀𝐘 </title>
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/tvtelugu/play/main/images/TVtelugu.ico">
        <style>
-        body {
+          body {
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-image: url('https://images.pexels.com/photos/4840134/pexels-photo-4840134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Add your background image URL here */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #fff;
+            filter: blur(10px); /* Adjust blur level */
+            z-index: -2;
         }
         .background-blur {
             position: absolute;
@@ -26,7 +37,6 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
-            backdrop-filter: blur(5px); /* Blur effect */
             z-index: -1;
         }
         header {
@@ -40,6 +50,7 @@
             margin-bottom: 20px;
             background: none; /* Remove background */
             border-bottom: 2px solid #333; /* Add a border for visual separation */
+            z-index: 1; /* Ensure header is above the background blur */
         }
         .logo {
             width: 60px;
@@ -53,10 +64,6 @@
             font-size: 2rem;
             margin: 0;
         }
-        .search-container {
-            position: relative;
-        }
-        
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -64,6 +71,7 @@
             padding: 20px;
             max-width: 800px;
             width: 100%;
+            z-index: 1; /* Ensure grid is above the background blur */
         }
         .card {
             background-color: #f8f8f8;
@@ -139,7 +147,7 @@
             border-radius: 50%;
             width: 50px;
             height: 50px;
-            animation: spin 5s linear infinite;
+            animation: spin 1s linear infinite;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -162,7 +170,7 @@
     <header>
         <img src="https://raw.githubusercontent.com/tvtelugu/play/main/images/TVTELUGU-B.png" alt="Logo" class="logo"> <!-- Add your logo URL here -->
         <div class="title">
-            <h1> 🕊 𝐓𝐀𝐓𝐀𝐏𝐋𝐀𝐘</h1>
+            <h1> 🕊 𝐓𝐕𝐓𝐄𝐋𝐔𝐆𝐔 </h1>
         </div>
 
     </header>
@@ -976,7 +984,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 My Streaming Service. All rights reserved.</p>
+        <p>&copy; 2024 𝐓𝐕𝐓𝐄𝐋𝐔𝐆𝐔. All rights reserved.</p>
     </footer>
 
     <script>
